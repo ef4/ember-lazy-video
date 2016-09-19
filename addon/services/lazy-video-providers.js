@@ -7,7 +7,7 @@ var YOUTUBE_REGEX = /(https?:\/\/)?(www.)?(youtube\.com\/watch\?v=|youtu\.be\/|y
 var VIMEO_REGEX   = /https?:\/\/(?:www\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/;
 var INSTAGRAM_REGEX = /(https?:\/\/)?(www.)?instagr(am\.com|\.am)\/p\/([A-Za-z0-9_-]*)/;
 
-export default Ember.Object.extend({
+export default Ember.Service.extend({
   getUrl: function(url, endpoint, opts) {
     var params;
     opts = (typeof opts === "undefined") ? {} : opts;
