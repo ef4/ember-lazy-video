@@ -43,6 +43,6 @@ export default Ember.Component.extend({
   style: Ember.computed('videoThumbnail', 'poster', function() {
     var poster = get(this, 'poster');
     var thumbnail = poster || get(this, 'videoThumbnail');
-    return 'background-image: url(' + thumbnail + ')';
+    return Ember.String.htmlSafe('background-image: url(' + encodeURI(thumbnail) + ')');
   })
 });
