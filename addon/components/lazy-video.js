@@ -12,6 +12,7 @@ export default Ember.Component.extend({
   attributeBindings : [ 'style' ],
   videoThumbnail    : null,
   poster            : null,
+  providers: Ember.inject.service('lazy-video-providers'),
 
   click: function() {
     set(this, 'isDisplayed', true);

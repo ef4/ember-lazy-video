@@ -9,6 +9,7 @@ var resolve = Ember.RSVP.resolve;
 var run = Ember.run;
 
 moduleForComponent('lazy-video', 'LazyVideoComponent', {
+  unit: true,
   subject: makeSubject({
     providers: {
       getThumbnailUrl: function() {
@@ -18,8 +19,8 @@ moduleForComponent('lazy-video', 'LazyVideoComponent', {
   })
 });
 
-test('it renders with correct style attribute', function() {
-  expect(1);
+test('it renders with correct style attribute', function(assert) {
+  assert.expect(1);
 
   var component = this.subject({
     url: 'https://www.youtube.com/watch?v=gvdf5n-zI14'
@@ -30,5 +31,5 @@ test('it renders with correct style attribute', function() {
   });
 
   var componentStyle = component.$().attr('style');
-  ok(/url\(http:\/\/example\.com\)/.test(componentStyle));
+  assert.ok(/url\(http:\/\/example\.com\)/.test(componentStyle));
 });
